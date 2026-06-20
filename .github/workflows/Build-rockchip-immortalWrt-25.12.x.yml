@@ -110,11 +110,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y qemu-utils genisoimage
 
-      - name: ⚙️ 设置IP、版本号
+      - name: ⚙️ Set custom IP config
         run: |
-          sed -i "s/版本号/${{ inputs.luci_version }}/g" files/uci-defaults/99-custom.sh
-          sed -i "s/__IPADDR__/${{ inputs.ipaddr }}/g" files/uci-defaults/99-custom.sh
-          sed -i "s/VERXXXX/${{ inputs.luci_version }}/g" files/uci-defaults/99-custom.sh
+          sed -i "s/版本号/${{ inputs.luci_version }}/g" files/etc/uci-defaults/99-custom.sh
+          sed -i "s/__IPADDR__/${{ inputs.ipaddr }}/g" files/etc/uci-defaults/99-custom.sh
+          sed -i "s/VERXXXX/${{ inputs.luci_version }}/g" files/etc/uci-defaults/99-custom.sh
           echo "✅ 配置修改完成"
 
       - name: ⏬ 下载 ImmortalWrt ImageBuilder 25.12.x
