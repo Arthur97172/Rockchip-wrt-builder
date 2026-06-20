@@ -29,6 +29,16 @@ fi
 # 定义所需安装的包列表
 PACKAGES=""
 
+# [核心系统 - 不含 libc/libgcc，由 base 系统提供]
+PACKAGES="base-files uci ubus dropbear logd mtd bash htop curl wget ca-bundle ca-certificates"
+PACKAGES="$PACKAGES dnsmasq-full firewall4 nftables kmod-nft-offload"
+PACKAGES="$PACKAGES ip-full ipset iw ppp ppp-mod-pppoe wpad-openssl"
+PACKAGES="$PACKAGES kmod-xdp-sockets-diag"
+
+# [硬件驱动]
+PACKAGES="$PACKAGES -kmod-ath10k-sdio kmod-ath10k"
+PACKAGES="$PACKAGES kmod-ata-ahci kmod-ata-ahci-dwc kmod-mmc kmod-r8125 kmod-r8168 kmod-r8169 r8169-firmware"
+
 # [磁盘与文件系统]
 PACKAGES="$PACKAGES block-mount fdisk lsblk blkid parted resize2fs smartmontools"
 PACKAGES="$PACKAGES kmod-fs-ext4 kmod-fs-vfat kmod-fs-ntfs3 kmod-fs-exfat kmod-fs-btrfs kmod-fs-f2fs"
@@ -49,6 +59,20 @@ PACKAGES="$PACKAGES kmod-mt7922-firmware kmod-mt7925-common kmod-mt7925-firmware
 PACKAGES="$PACKAGES kmod-mt792x-common kmod-mt792x-usb"
 PACKAGES="$PACKAGES kmod-mt7992-23-firmware kmod-mt7992-firmware"
 PACKAGES="$PACKAGES kmod-mt7996-233-firmware kmod-mt7996-firmware kmod-mt7996-firmware-common kmod-mt7996e kmod-mtk-t7xx"
+
+# [Web 界面]
+PACKAGES="$PACKAGES luci luci-base luci-compat luci-mod-admin-full luci-theme-argon"
+PACKAGES="$PACKAGES luci-app-argon-config luci-i18n-argon-config-zh-cn"
+PACKAGES="$PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn"
+PACKAGES="$PACKAGES luci-app-ttyd luci-i18n-ttyd-zh-cn"
+
+# [功能插件]
+PACKAGES="$PACKAGES luci-app-samba4 luci-i18n-samba4-zh-cn"
+PACKAGES="$PACKAGES luci-app-upnp luci-i18n-upnp-zh-cn"
+PACKAGES="$PACKAGES luci-app-wol luci-i18n-wol-zh-cn"
+PACKAGES="$PACKAGES luci-app-ddns luci-i18n-ddns-zh-cn"
+PACKAGES="$PACKAGES luci-app-hd-idle luci-i18n-hd-idle-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn luci-i18n-dufs-zh-cn"
 
 # 只将第三方插件纳入 PACKAGES 列表（核心包来自 ImageBuilder 捆绑包）
 PACKAGES="$CUSTOM_PACKAGES"
