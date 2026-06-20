@@ -4,6 +4,7 @@
 
 PROFILE=${PROFILE:-"friendlyarm_nanopi-r3s"}
 ROOTFS_PARTSIZE=${ROOTFS_PARTSIZE:-"1024"}
+INCLUDE_DOCKER=${INCLUDE_DOCKER:-"no"}
 
 echo "Target Profile: $PROFILE"
 echo "Rootfs Size: $ROOTFS_PARTSIZE"
@@ -101,6 +102,12 @@ PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn luci-i18n-dufs-zh-cn"
 
 # [合并第三方插件]
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
+
+# [Docker 插件]
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    echo "🐳 Docker enabled, adding docker packages"
+    PACKAGES="$PACKAGES docker docker-compose luci-app-dockerman luci-i18n-dockerman-zh-cn"
+fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"
 echo "$PACKAGES"

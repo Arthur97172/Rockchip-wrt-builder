@@ -5,10 +5,12 @@
 # $1, $2 是执行脚本时后面跟着的参数
 PROFILE=${1:-"friendlyarm_nanopi-r3s"}      # 如果没传，默认 r3s
 ROOTFS_PARTSIZE=${2:-"1024"}                 # 如果没传，默认 1024
+INCLUDE_DOCKER=${INCLUDE_DOCKER:-"no"}       # 通过 env 传入
 
 # 验证收到的参数
 echo "Target Profile: $PROFILE"
 echo "Rootfs Size: $ROOTFS_PARTSIZE"
+echo "Include Docker: $INCLUDE_DOCKER"
 
 source shell/custom-packages.sh
 echo "第三方软件包: $CUSTOM_PACKAGES"
@@ -129,6 +131,12 @@ PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 # ======== shell/custom-packages.sh =======
 # 合并imm仓库以外的第三方插件
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
+
+# [Docker 插件]
+if [ "$INCLUDE_DOCKER" = "yes" ]; then
+    echo "🐳 Docker enabled, adding docker packages"
+    PACKAGES="$PACKAGES docker docker-compose luci-app-dockerman luci-i18n-dockerman-zh-cn"
+fi
 
 # 构建镜像
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Building image with the following packages:"

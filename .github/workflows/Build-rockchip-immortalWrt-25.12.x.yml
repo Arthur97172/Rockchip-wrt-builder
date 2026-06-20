@@ -79,6 +79,14 @@ on:
         description: '设置软件包大小 单位(MB)'
         required: true
         default: '1024'
+      include_docker:
+        description: "是否集成 Docker 插件"
+        required: true
+        default: "no"
+        type: choice
+        options:
+          - 'yes'
+          - 'no'
 
 permissions:
   contents: write
@@ -109,6 +117,9 @@ jobs:
             -v "${{ github.workspace }}/rockchip:/home/build/immortalwrt/rockchip" \
             -v "${{ github.workspace }}/shell:/home/build/immortalwrt/shell" \
             -v "${{ github.workspace }}/files:/home/build/immortalwrt/files" \
+            -e INCLUDE_DOCKER=${{ inputs.include_docker }} \
+            -e PROFILE=${{ inputs.profile }} \
+            -e ROOTFS_PARTSIZE=${{ inputs.rootfs_partsize }} \
             immortalwrt/imagebuilder:rockchip-armv8-openwrt-${{ inputs.luci_version }} \
             /bin/bash /home/build/immortalwrt/rockchip/build25.sh
 
@@ -120,6 +131,7 @@ jobs:
           🏠 后台地址： ${{ inputs.ipaddr }}
           👤 用户名： root
           🔑 密码： 无
+          🐳 Docker状态： ${{ inputs.include_docker == 'yes' && '已集成' || '未集成' }}
           EOF
 
       - name: 🚀 Upload to Release
