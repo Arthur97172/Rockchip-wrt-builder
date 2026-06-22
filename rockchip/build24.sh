@@ -155,19 +155,29 @@ PACKAGES="$PACKAGES kmod-mt7996e"
 PACKAGES="$PACKAGES kmod-mtk-t7xx"
 
 # --- 核心应用界面 ---
-PACKAGES="$PACKAGES luci luci-base luci-compat luci-mod-admin-full luci-theme-argon"
-PACKAGES="$PACKAGES luci-app-argon-config luci-i18n-argon-config-zh-cn"
-PACKAGES="$PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn luci-app-ttyd luci-i18n-ttyd-zh-cn"
+PACKAGES="$PACKAGES luci luci-base luci-compat luci-mod-admin-full"
+PACKAGES="$PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn"
+PACKAGES="$PACKAGES luci-app-ttyd"
+
+# LuCI 中文本地化与插件
+PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-filetransfer-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-quickstart-zh-cn"
+PACKAGES="$PACKAGES luci-base luci-i18n-base-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-upnp-zh-cn"
+PACKAGES="$PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-cifs-mount-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-unishare-zh-cn"
+#PACKAGES="$PACKAGES luci-i18n-dockerman-zh-cn"
 
 # --- 功能插件 (基于你的配置) ---
 PACKAGES="$PACKAGES luci-app-samba4 luci-i18n-samba4-zh-cn"
 PACKAGES="$PACKAGES luci-app-upnp luci-i18n-upnp-zh-cn"
 PACKAGES="$PACKAGES luci-app-wol luci-i18n-wol-zh-cn"
 PACKAGES="$PACKAGES luci-app-ddns luci-i18n-ddns-zh-cn"
-PACKAGES="$PACKAGES luci-app-hd-idle luci-i18n-hd-idle-zh-cn"
 
-# 文件管理器
-PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
 # 静态文件服务器dufs(推荐)
 PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 # ======== shell/custom-packages.sh =======
