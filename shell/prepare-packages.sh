@@ -20,13 +20,11 @@ find "$TEMP_DIR" -type f -name "*.ipk" -exec cp -v {} "$TARGET_DIR"/ \;
 
 # 2. 收集 extra-packages/*/ 下的 .ipk 文件（只查一级子目录）
 find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.ipk" ! -path "$TEMP_DIR/*" \
-  -exec echo "👉 Found ipk:" {} \; \
   -exec cp -v {} "$TARGET_DIR"/ \;
 
 # 3. 收集 extra-packages/*/ 下的 .apk 文件（只查一级子目录）
 # APK 包安装系统需要这些文件生成 packages.adb 索引
 find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.apk" ! -path "$TEMP_DIR/*" \
-  -exec echo "👉 Found apk:" {} \; \
   -exec cp -v {} "$TARGET_DIR"/ \;
 
 echo "✅ 所有 .ipk 或 .apk 文件已整理至 $TARGET_DIR/"
