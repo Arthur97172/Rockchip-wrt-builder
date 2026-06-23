@@ -214,7 +214,7 @@ jobs:
         run: |
           cat > ${{ github.workspace }}/router-info.md <<EOF
           ## 📡 路由器后台信息
-
+          📌 版本： Immortalwrt-rockchip-${{ inputs.luci_version }}
           🏠 后台地址： ${{ github.event.inputs.ipaddr }}
           👤 用户名： root
           🔑 密码： 无
