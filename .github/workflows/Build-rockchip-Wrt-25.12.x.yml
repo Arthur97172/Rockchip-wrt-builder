@@ -144,7 +144,7 @@ jobs:
           sed -i "s/VERXXXX/${{ env.FINAL_LUCI_VER }}/g" files/etc/uci-defaults/99-custom.sh
           echo "✅ 配置修改完成"
 
-      - name: ⏬ 下载 ImmortalWrt ImageBuilder 25.12.x
+      - name: ⏬ 下载 Wrt ImageBuilder 25.12.x
         run: |
           URL="https://downloads.${{ env.FINAL_WRT }}.org/releases/${{ env.FINAL_LUCI_VER }}/targets/rockchip/armv8/${{ env.FINAL_WRT }}-imagebuilder-${{ env.FINAL_LUCI_VER }}-rockchip-armv8.Linux-x86_64.tar.zst"
           curl -Lf -o imagebuilder.tar.zst "$URL"
