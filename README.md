@@ -75,8 +75,8 @@
 > **"您的每一个⭐️，都是开源土壤里的一缕阳光，让灵感发芽，让创造生长~"**
 
 ## 🎉 Thanks [![](https://img.shields.io/badge/-Thanks-FFFFFF.svg)](#-Thanks-)
-- [Openwrt](https://github.com/Openwrt)
-- [immortalwrt](https://github.com/immortalwrt)
+- [OpenWrt](https://github.com/Openwrt)
+- [ImmortalWrt](https://github.com/immortalwrt)
 
 ## 🙏 免责声明 [![](https://img.shields.io/badge/-免责声明-FFFFFF.svg)](#-免责声明-)
 - 📚 本固件仅供学习研究，严禁用于任何商业用途
