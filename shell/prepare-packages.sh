@@ -27,4 +27,4 @@ find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.ipk" ! -path "$TEMP_DI
 find "$BASE_DIR" -mindepth 2 -maxdepth 2 -type f -name "*.apk" ! -path "$TEMP_DIR/*" \
   -exec cp -v {} "$TARGET_DIR"/ \;
 
-echo "✅ 所有 .ipk 和 .apk 文件已整理至 $TARGET_DIR/"
+echo "✅ 所有 .ipk 或 .apk 文件已整理至 $TARGET_DIR/"

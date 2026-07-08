@@ -1,6 +1,9 @@
 #!/bin/bash
-# 25.12.x 第三方插件配置 (APK 格式) - x86-64 专用
+# 25.12.x 第三方插件配置 (APK 格式) - aarch64_generic 专用
 # 启用第三方插件时取消对应注释
+
+#晶晨宝盒 (amlogic)
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-amlogic luci-i18n-amlogic-zh-cn"
 
 # argon主题 (argon)
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-theme-argon"
@@ -38,11 +41,8 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-openclash"
 # partexp分区扩容 (partexp)
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-partexp luci-i18n-partexp-zh-cn"
 
-# passwall依赖 (passwall)
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES geoview xray-core sing-box hysteria"
-
 # passwall代理面板 (passwall)
-#CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-passwall luci-i18n-passwall-zh-cn"
+#CUSTOM_PACKAGES="$CUSTOM_PACKAGES chinadns-ng geoview xray-core sing-box luci-app-passwall luci-i18n-passwall-zh-cn"
 
 # poweroffdevice关机 (poweroffdevice)
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-poweroffdevice luci-i18n-poweroffdevice-zh-cn"
