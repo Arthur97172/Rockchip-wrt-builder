@@ -5,7 +5,7 @@
 
 # --- 接收外部参数 ---
 # 与 build24.sh 约定一致:$1=PROFILE, $2=ROOTFS_PARTSIZE
-PROFILE=${1:-"friendlyarm_nanopi-r4s"}
+PROFILE=${1:-"friendlyarm_nanopc-t6"}
 ROOTFS_PARTSIZE=${2:-"1024"}
 INCLUDE_DOCKER=${INCLUDE_DOCKER:-"no"}
 
