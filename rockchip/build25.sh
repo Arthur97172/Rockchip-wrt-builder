@@ -60,9 +60,7 @@ PACKAGES="$PACKAGES kmod-mt7992-23-firmware kmod-mt7992-firmware"
 PACKAGES="$PACKAGES kmod-mt7996-233-firmware kmod-mt7996-firmware kmod-mt7996-firmware-common kmod-mt7996e kmod-mtk-t7xx"
 
 # [Web 界面]
-PACKAGES="$PACKAGES luci luci-base luci-i18n-base-zh-cn luci-mod-admin-full luci-theme-argon"
-PACKAGES="$PACKAGES luci-app-argon-config luci-i18n-argon-config-zh-cn"
-PACKAGES="$PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn"
+PACKAGES="$PACKAGES luci luci-base luci-i18n-base-zh-cn luci-mod-admin-full"
 PACKAGES="$PACKAGES luci-app-ttyd luci-i18n-ttyd-zh-cn"
 
 # [功能插件]
