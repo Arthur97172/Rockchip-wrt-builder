@@ -5,6 +5,9 @@
 #Others - DO NOT REMOVE
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-cpufreq luci-i18n-cpufreq-zh-cn"
 
+# adguardhome广告拦截 (adguardhome)
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
+
 #晶晨宝盒 (amlogic)
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-amlogic luci-i18n-amlogic-zh-cn"
 
