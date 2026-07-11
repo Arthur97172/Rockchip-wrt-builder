@@ -9,7 +9,7 @@ uci set firewall.@zone[1].input='ACCEPT'
 uci add dhcp domain
 uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
-uci set system.@system[0].hostname='iStoreOS'
+uci set system.@system[0].hostname='WRTVERSIONINFO'
 uci set system.@system[0].timezone='CST-8'
 uci set system.@system[0].zonename='Asia/Shanghai'
 uci set luci.main.lang='zh_cn'
@@ -89,7 +89,7 @@ rm -r /etc/banner1
 
 # 设置作者描述信息
 FILE_PATH="/etc/openwrt_release"
-NEW_DESCRIPTION="iStoreOS VERXXXX"
+NEW_DESCRIPTION="WRTVERSIONINFO VERXXXX"
 sed -i "s/DISTRIB_DESCRIPTION='[^']*'/DISTRIB_DESCRIPTION='$NEW_DESCRIPTION'/" "$FILE_PATH"
 
 exit 0
