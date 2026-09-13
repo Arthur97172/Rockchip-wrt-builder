@@ -73,7 +73,8 @@ PACKAGES=""
 # [核心系统]
 PACKAGES="base-files libc libgcc uci ubus dropbear logd mtd opkg bash htop curl wget ca-bundle ca-certificates"
 PACKAGES="$PACKAGES -dnsmasq dnsmasq-full firewall4 nftables kmod-nft-offload -odhcpd odhcpd-ipv6only odhcp6c nano"
-PACKAGES="$PACKAGES ip-full ipset iw ppp ppp-mod-pppoe -wpad-basic-mbedtls wpad-openssl luci-proto-ppp luci-proto-ipv6"
+PACKAGES="$PACKAGES ip-full ipset iw ppp ppp-mod-pppoe -wpad-basic-mbedtls -wpad-mbedtls -wpad-openssl wpad-mesh-openssl luci-proto-ppp luci-proto-ipv6"
+PACKAGES="$PACKAGES -libustream-mbedtls -libustream-wolfssl libustream-openssl"
 PACKAGES="$PACKAGES kmod-tcp-bbr"
 
 # [硬件驱动 - 板载 PCIe]
