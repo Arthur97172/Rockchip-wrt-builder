@@ -236,7 +236,7 @@ jobs:
             sed -i 's/wget /wget --tries=5 --timeout=20 --waitretry=3 /g' imagebuilder/Makefile
           fi          
           echo "--- 检查更新后的 repositories.conf ---"
-          cat imagebuilder/repositories.conf | grep "https"
+          cat imagebuilder/repositories.conf
 
       - name: 🧱 构建 ${{ env.FINAL_WRT }}-${{ env.FINAL_LUCI_VER }} 固件
         working-directory: ./imagebuilder
