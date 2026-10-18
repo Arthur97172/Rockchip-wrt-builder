@@ -35,6 +35,7 @@ PACKAGES="$PACKAGES ip-full ipset iw ppp ppp-mod-pppoe -wpad-basic-mbedtls -wpad
 PACKAGES="$PACKAGES -libustream-mbedtls -libustream-wolfssl libustream-openssl"
 PACKAGES="$PACKAGES kmod-tcp-bbr"
 PACKAGES="$PACKAGES tmux"
+PACKAGES="$PACKAGES uhttpd luci-app-uhttpd"
 
 # [硬件驱动]
 PACKAGES="$PACKAGES -kmod-ath10k-sdio kmod-ath10k"
